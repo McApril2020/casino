@@ -1,5 +1,4 @@
 import { Game } from '../../types/game';
-import { FaStar, FaRegStar } from 'react-icons/fa';
 import './GamesCard.css';
 
 interface Props {
@@ -17,11 +16,11 @@ const GameCard = ({ game, isFavorite, onToggleFavorite }: Props) => {
         <button
           className="favorite-btn"
           onClick={(e) => {
-            e.stopPropagation(); 
+            e.stopPropagation();
             onToggleFavorite();
           }}
         >
-          {isFavorite ? <FaStar /> : <FaRegStar />}
+          {isFavorite ? <span>&#9734;</span> :  <span>&#9733;</span>}
         </button>
 
         <div className="title">{game.name}</div>
