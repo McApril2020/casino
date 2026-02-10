@@ -1,0 +1,15 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;      
+  gap: 10px;
+  margin: 16px 0;
+}
+
+
+.filters input,
+.filters select {
+  flex: 1 1 180px;      
+  min-width: 140px;     
+  padding: 8px 10px;
+  border-radius: 8px;  
+}
