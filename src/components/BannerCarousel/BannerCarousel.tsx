@@ -16,10 +16,16 @@ const images = [
 
 const BannerCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [fade, setFade] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
+      setFade(false);
+
+        setTimeout(() => {
+          setCurrentIndex((prev) => (prev + 1) % images.length);
+        setFade(true);
+      }, 300);
     }, 3000);
 
     return () => clearInterval(interval);
@@ -29,8 +35,8 @@ const BannerCarousel = () => {
     <div className="banner-carousel">
       <img
         src={images[currentIndex]}
-        alt="Casino Banner"
-        className="banner-image"
+        alt="Games Banner"
+        className={`banner-image ${fade ? 'fade-in' : 'fade-out'}`}
       />
 
       <div className="dots">

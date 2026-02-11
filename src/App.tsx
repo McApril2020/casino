@@ -1,7 +1,12 @@
 import Casino from './pages/Casino';
+import './App.css';
 
 function App() {
-  return <Casino />;
+  return (
+    <div className="container">
+      <Casino />
+    </div>
+  );
 }
 
 export default App;
