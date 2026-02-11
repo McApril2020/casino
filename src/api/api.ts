@@ -151,15 +151,14 @@ const gameList: Game[] = [
 
 export const fetchGames = (): Promise<Game[]> => {
     return new Promise((resolve, reject) => {
-      // Simulate network delay
       setTimeout(() => {
-        // Randomly simulate an error (optional)
+
         const shouldFail = Math.random() < 0.05;
         if (shouldFail) {
           reject('Failed to fetch games. Please try again.');
         } else {
           resolve(gameList);
         }
-      }, 1000); // 1 second delay
+      }, 1000); 
     });
   };
